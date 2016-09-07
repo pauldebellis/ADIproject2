@@ -5,19 +5,21 @@ package adi.adiproject2;
  */
 public class Mod {
 
-    String mName;
-    String mLink;
-    String mCategory;
-    String mDescription;
-    long mEndorsements;
+    int id;
+    String name;
+    String url;
+    String category;
+    String description;
+    String endorsements;
 
-    public Mod(String name, String link, String category, String description, long endorsements){
+    public Mod(int id, String name, String url, String category, String description, String endorsements){
 
-        name = mName;
-        link = mLink;
-        category = mCategory;
-        description = mDescription;
-        endorsements = mEndorsements;
+        this.id = id;
+        this.name = name;
+        this.url = url;
+        this.category = category;
+        this.description = description;
+        this.endorsements = endorsements;
 
     }
 
