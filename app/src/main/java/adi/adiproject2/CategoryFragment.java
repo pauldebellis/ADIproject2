@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -39,12 +40,19 @@ public class CategoryFragment extends Fragment{
         View view = inflater.inflate(R.layout.fragment_category, container,
                 false);
 
-        String[] values = new String[] { "Message1", "Message2", "Message3" };
+        String[] values = new String[] {"Models/Textures", "Followers", "Gameplay", "Magic"};
         ListView lv = (ListView)view.findViewById(R.id.categoryList);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
                 android.R.layout.simple_list_item_1, values);
         lv.setAdapter(adapter);
         return view;
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+// TODO: CLICK ON CATEGORY TO OPEN ITS PAGE
+            }
+        });
     }
 
 
