@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="adi.adiproject2.AddModFragment">
+    
+    <EditText
+        android:id="@+id/enterModName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Mod Name"
+        android:textSize="14pt"/>
+
+    <EditText
+        android:id="@+id/enterModUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="URL"
+        android:layout_below="@+id/enterModName"
+        android:textSize="14pt"/>
+
+    <EditText
+        android:id="@+id/enterModCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Category"
+        android:layout_below="@+id/enterModUrl"
+        android:textSize="14pt"/>
+
+    <EditText
+        android:id="@+id/enterModDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:layout_below="@id/enterModCategory"
+        android:textSize="14pt"/>
+
+    <EditText
+        android:id="@+id/enterModEndorsements"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Endorsements"
+        android:layout_below="@id/enterModDescription"
+        android:textSize="14pt"/>
+
+    <Button
+        android:id="@+id/finalizeMod"
+        android:text="Add mod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

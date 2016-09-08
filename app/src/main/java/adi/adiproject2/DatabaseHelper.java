@@ -46,22 +46,21 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         onCreate(sqLiteDatabase);
     }
 //ADD MODS to DB
-    public int addMod(String name, String category){
-        SQLiteDatabase db = getWritableDatabase();
+    public void addMod(String name, String endorsements, String url, String category, String description, SQLiteDatabase db){
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, name);
-        values.put(COLUMN_CATEGORY, category);
-        long id = db.insert(TABLE_NAME, null, values);
-        return ((int)id);
+        values.put(COLUMN_ENDORSEMENTS, endorsements);
+        db.insert(TABLE_NAME, null, values);
+
     }
 
 //GET MOD SUMMARY FOR CATEGORY DETAIL
     public Cursor getModSummary(SQLiteDatabase db){
         db = getReadableDatabase();
-        String[] projection = new String[]{COLUMN_ID, COLUMN_NAME, COLUMN_ENDORSEMENTS, COLUMN_CATEGORY};
-        String selection = COLUMN_CATEGORY+" = ?";
+        String[] projection = new String[]{"_id", COLUMN_NAME, COLUMN_ENDORSEMENTS};
+//        String selection = COLUMN_CATEGORY+" = ?";
 //        String[] selectionArgs = new String[]{String.valueOf(id)};
-        Cursor cursor = db.query(TABLE_NAME, projection, selection, null, null, null, null);
+        Cursor cursor = db.query(TABLE_NAME, projection, null, null, null, null, null);
         cursor.moveToFirst();
 
         return cursor;
@@ -71,8 +70,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 //GET MOD INFO FOR DETAILED VIEW
     public Cursor getModDetailed(SQLiteDatabase db){
         db = getReadableDatabase();
-        String[] projection = new String[]{COLUMN_ID, COLUMN_NAME, COLUMN_CATEGORY, COLUMN_ENDORSEMENTS, COLUMN_DESCRIPTION, COLUMN_URL};
-        String selection = COLUMN_ID+" = ?";
+        String[] projection = new String[]{"_id", COLUMN_ID, COLUMN_NAME, COLUMN_CATEGORY, COLUMN_ENDORSEMENTS, COLUMN_DESCRIPTION, COLUMN_URL};
+//        String selection = COLUMN_ID+" = ?";
 //        String[] selectionArgs = new String[]{String.valueOf(id)};
         Cursor cursor = db.query(TABLE_NAME, projection, null, null, null, null, null);
         cursor.moveToFirst();
