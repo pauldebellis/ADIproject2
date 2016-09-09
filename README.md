@@ -10,6 +10,8 @@ There are a couple websites that host nearly all noteworthy Skyrim mods, and the
 
 As the intent of this app is for each user to curate their own personal library of mods, the database will be empty when the app is first launched. By clicking a button, a user can begin population their library by entering the mod's name, category, and number of endorsements.
 
+![Add Mod Page](http://i.imgur.com/zJdpw8h.png)
+
 *As a modder, I want to see the popularity of each mod at a glance.*
 
 The home screen of MMDB is a list of all mods in the database, with each mod's name and number of Nexus endorsements. Each can be clicked to view all details about the mod.
