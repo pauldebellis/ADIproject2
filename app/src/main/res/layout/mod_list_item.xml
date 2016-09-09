@@ -3,14 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="#66FFFFFF">
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:layout_gravity="left">
+        android:layout_gravity="start"
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/summaryName"
@@ -33,21 +35,23 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical"
-        android:layout_gravity="right">
+        android:layout_gravity="end"
+        android:padding="5dp">
 
         <TextView
             android:id="@+id/summaryEndorsements"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"
-            android:gravity="right"/>
+            android:gravity="end"/>
 
         <TextView
             android:id="@+id/summaryCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="10pt"
-            android:gravity="right"/>
+            android:gravity="end"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 

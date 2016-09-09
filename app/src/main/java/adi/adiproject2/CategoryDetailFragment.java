@@ -2,7 +2,6 @@ package adi.adiproject2;
 
 
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -20,9 +19,14 @@ import android.widget.ListView;
 public class CategoryDetailFragment extends Fragment {
 
     ListView lv;
+    Cursor cursor = null;
 
     public CategoryDetailFragment() {
         // Required empty public constructor
+    }
+
+    public CategoryDetailFragment(Cursor cursor){
+        this.cursor = cursor;
     }
 
 //SHOW A LIST OF ALL MODS
@@ -44,10 +48,12 @@ public class CategoryDetailFragment extends Fragment {
 
 
         lv = (ListView)view.findViewById(R.id.modList);
-        //TODO make database helper a singleton
-        DatabaseHelper dbHelper = new DatabaseHelper(getContext());
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = dbHelper.getModSummary(db);
+
+        if(cursor == null) {
+            //TODO make database helper a singleton
+            DatabaseHelper dbHelper = new DatabaseHelper(getContext());
+            cursor = dbHelper.getModSummary();
+        }
 //        DatabaseUtils.dumpCursor(cursor);
         ModListCursorAdapter adapter = new ModListCursorAdapter(getActivity(), cursor);
         lv.setAdapter(adapter);
@@ -70,17 +76,14 @@ public class CategoryDetailFragment extends Fragment {
 // Not sure how to get search to work with my current setup. Because everything is in fragments, I can't figure
 // out how to refresh my listview with only the search results visible. John and I banged our heads against this for about an hour.
 
-    public void displaySearch (Cursor value){
-//        DatabaseHelper dbHelper = new DatabaseHelper(getContext());
-//        SQLiteDatabase db = dbHelper.getReadableDatabase();
-//        Cursor cursor = dbHelper.getModSummary(db);
+//    public void setCursor (Cursor cursor){
 //        DatabaseUtils.dumpCursor(cursor);
-
-        //TODO make database helper a singleton
-        DatabaseHelper dbHelper = new DatabaseHelper(getContext());
-        ModListCursorAdapter adapter = new ModListCursorAdapter(getActivity(), value);
-
-        lv.setAdapter(adapter);
-
-    }
+//        this.cursor = cursor;
+//
+////        DatabaseHelper dbHelper = new DatabaseHelper(getContext());
+////        ModListCursorAdapter adapter = new ModListCursorAdapter(getActivity(), value);
+////
+////        lv.setAdapter(adapter);
+//
+//    }
 }
