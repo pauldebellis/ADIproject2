@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         handleIntent(intent);
     }
 
-    //    PEFORM SEARCH
+    //    PERFORM SEARCH
     private void handleIntent(Intent intent) {
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
