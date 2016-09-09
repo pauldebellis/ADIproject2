@@ -3,6 +3,7 @@ package adi.adiproject2;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -45,20 +46,22 @@ public class MainActivity extends AppCompatActivity {
         handleIntent(intent);
     }
 
-//    PEFORM SEARCH; INVOKE DISPLAYSEARCH METHODS FROM CATEGORYDETAILFRAGMENT TO SHOW RESULTS
+    //    PEFORM SEARCH
     private void handleIntent(Intent intent) {
 
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())){
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             DatabaseHelper dbHelper = new DatabaseHelper(this);
             String query = intent.getStringExtra(SearchManager.QUERY);
 //            Cursor cursor = dbHelper.searchMods(query);
 //            dbHelper.searchMods(query);
+
+//            Creates a new categorydetail fragment and passes it cursor from search
             CategoryDetailFragment fragment = new CategoryDetailFragment(dbHelper.searchMods(query));
+            DatabaseUtils.dumpCursor(dbHelper.searchMods(query));
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentContainer, fragment);
             fragmentTransaction.commit();
-
         }
     }
 

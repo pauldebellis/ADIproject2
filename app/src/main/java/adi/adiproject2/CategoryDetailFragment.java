@@ -2,6 +2,7 @@ package adi.adiproject2;
 
 
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -25,11 +26,11 @@ public class CategoryDetailFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public CategoryDetailFragment(Cursor cursor){
+    public CategoryDetailFragment(Cursor cursor) {
         this.cursor = cursor;
     }
 
-//SHOW A LIST OF ALL MODS
+    //SHOW A LIST OF ALL MODS
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,9 +48,10 @@ public class CategoryDetailFragment extends Fragment {
         });
 
 
-        lv = (ListView)view.findViewById(R.id.modList);
+        lv = (ListView) view.findViewById(R.id.modList);
 
-        if(cursor == null) {
+// if cursor is null (which it will be if constructor is run without params, ie at start), show the whole list
+        if (cursor == null) {
             //TODO make database helper a singleton
             DatabaseHelper dbHelper = new DatabaseHelper(getContext());
             cursor = dbHelper.getModSummary();
