@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         handleIntent(intent);
     }
 
-//    OPEN A NEW VIEW WITH SEARCH RESULTS
+//    PEFORM SEARCH; INVOKE DISPLAYSEARCH METHODS FROM CATEGORYDETAILFRAGMENT TO SHOW RESULTS
     private void handleIntent(Intent intent) {
 
         if (Intent.ACTION_SEARCH.equals(intent.getAction())){

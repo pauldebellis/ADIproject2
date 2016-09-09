@@ -18,6 +18,7 @@
 
     <ListView
         android:id="@+id/modList"
+        tools:listitem="@layout/mod_list_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="40dp"
