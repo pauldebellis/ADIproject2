@@ -2,7 +2,6 @@ package adi.adiproject2;
 
 
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -49,7 +48,7 @@ public class CategoryDetailFragment extends Fragment {
         DatabaseHelper dbHelper = new DatabaseHelper(getContext());
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = dbHelper.getModSummary(db);
-        DatabaseUtils.dumpCursor(cursor);
+//        DatabaseUtils.dumpCursor(cursor);
         ModListCursorAdapter adapter = new ModListCursorAdapter(getActivity(), cursor);
         lv.setAdapter(adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -65,6 +64,11 @@ public class CategoryDetailFragment extends Fragment {
     public void onResume() {
         super.onResume();
     }
+
+
+//
+// Not sure how to get search to work with my current setup. Because everything is in fragments, I can't figure
+// out how to refresh my listview with only the search results visible. John and I banged our heads against this for about an hour.
 
     public void displaySearch (Cursor value){
 //        DatabaseHelper dbHelper = new DatabaseHelper(getContext());

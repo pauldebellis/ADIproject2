@@ -23,6 +23,9 @@ public class ModListCursorAdapter extends CursorAdapter {
         return LayoutInflater.from(context).inflate(R.layout.mod_list_item, viewGroup, false);
     }
 
+
+//    Trying to get all details to show in the main list page. Weirdly, only name and endorsements show, and commenting them out
+//    doesn't keep them from showing.
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         TextView tvName = (TextView) view.findViewById(R.id.summaryName);

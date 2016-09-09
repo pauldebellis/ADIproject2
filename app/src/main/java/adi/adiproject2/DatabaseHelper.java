@@ -3,6 +3,7 @@ package adi.adiproject2;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -51,6 +52,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, name);
         values.put(COLUMN_ENDORSEMENTS, endorsements);
+        values.put(COLUMN_CATEGORY, category);
+        values.put(COLUMN_DESCRIPTION, description);
         db.insert(TABLE_NAME, null, values);
 
     }
@@ -63,6 +66,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 //        String[] selectionArgs = new String[]{String.valueOf(id)};
         Cursor cursor = db.query(TABLE_NAME, projection, null, null, null, null, null);
         cursor.moveToFirst();
+
+        DatabaseUtils.dumpCursor(cursor);
 
         return cursor;
     }

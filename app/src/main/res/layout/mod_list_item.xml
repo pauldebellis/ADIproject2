@@ -1,34 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/summaryName"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textSize="10pt"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_gravity="left">
 
-    <TextView
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:id="@+id/summaryEndorsements"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textSize="10pt"/>
+        <TextView
+            android:id="@+id/summaryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:gravity="top"/>
 
-    <TextView
-        android:id="@+id/summaryCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textSize="10pt"
-        android:layout_below="@+id/summaryEndorsements"/>
+        <TextView
+            android:id="@+id/summaryDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="8pt"
+            android:gravity="bottom"/>
 
-    <TextView
-        android:id="@+id/summaryDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:textSize="8pt"
-        android:layout_below="@id/summaryName"/>
+    </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_gravity="right">
+
+        <TextView
+            android:id="@+id/summaryEndorsements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:gravity="right"/>
+
+        <TextView
+            android:id="@+id/summaryCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="10pt"
+            android:gravity="right"/>
+
+    </LinearLayout>
+
+</LinearLayout>

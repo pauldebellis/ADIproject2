@@ -1,7 +1,7 @@
 package adi.adiproject2;
 
 /**
- * Created by klaus_000 on 9/6/2016.
+ * Somehow this class never got used...bad OOP
  */
 public class Mod {
 
