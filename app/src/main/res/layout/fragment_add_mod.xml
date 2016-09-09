@@ -9,23 +9,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Mod Name"
-        android:textSize="14pt"/>
+        android:textSize="10pt"/>
 
-    <EditText
-        android:id="@+id/enterModUrl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="URL"
-        android:layout_below="@+id/enterModName"
-        android:textSize="14pt"/>
+    <!--<EditText-->
+        <!--android:id="@+id/enterModUrl"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:hint="URL"-->
+        <!--android:layout_below="@+id/enterModName"-->
+        <!--android:textSize="10pt"/>-->
 
     <EditText
         android:id="@+id/enterModCategory"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Category"
-        android:layout_below="@+id/enterModUrl"
-        android:textSize="14pt"/>
+        android:layout_below="@+id/enterModName"
+        android:textSize="10pt"/>
 
     <EditText
         android:id="@+id/enterModDescription"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:hint="Description"
         android:layout_below="@id/enterModCategory"
-        android:textSize="14pt"/>
+        android:textSize="10pt"/>
 
     <EditText
         android:id="@+id/enterModEndorsements"
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:hint="Endorsements"
         android:layout_below="@id/enterModDescription"
-        android:textSize="14pt"/>
+        android:textSize="10pt"/>
 
     <Button
         android:id="@+id/finalizeMod"

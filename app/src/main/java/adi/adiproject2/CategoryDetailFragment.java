@@ -20,12 +20,13 @@ import android.widget.ListView;
  */
 public class CategoryDetailFragment extends Fragment {
 
+    ListView lv;
 
     public CategoryDetailFragment() {
         // Required empty public constructor
     }
 
-//SHOW A LIST OF ALL MODS IN GIVEN CATEGORY
+//SHOW A LIST OF ALL MODS
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,7 +43,8 @@ public class CategoryDetailFragment extends Fragment {
             }
         });
 
-        ListView lv = (ListView)view.findViewById(R.id.modList);
+
+        lv = (ListView)view.findViewById(R.id.modList);
         //TODO make database helper a singleton
         DatabaseHelper dbHelper = new DatabaseHelper(getContext());
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -62,6 +64,19 @@ public class CategoryDetailFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+    }
+
+    public void displaySearch (Cursor value){
+//        DatabaseHelper dbHelper = new DatabaseHelper(getContext());
+//        SQLiteDatabase db = dbHelper.getReadableDatabase();
+//        Cursor cursor = dbHelper.getModSummary(db);
+//        DatabaseUtils.dumpCursor(cursor);
+
+        //TODO make database helper a singleton
+        DatabaseHelper dbHelper = new DatabaseHelper(getContext());
+        ModListCursorAdapter adapter = new ModListCursorAdapter(getActivity(), value);
+
+        lv.setAdapter(adapter);
 
     }
 }

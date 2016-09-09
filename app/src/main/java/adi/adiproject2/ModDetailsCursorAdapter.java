@@ -2,7 +2,6 @@ package adi.adiproject2;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
@@ -11,34 +10,36 @@ import android.widget.TextView;
 /**
  * Created by klaus_000 on 9/8/2016.
  */
-public class ModListCursorAdapter extends CursorAdapter {
+public class ModDetailsCursorAdapter extends CursorAdapter{
 
-    public ModListCursorAdapter(Context context, Cursor cursor){
+    public ModDetailsCursorAdapter(Context context, Cursor cursor){
         super(context, cursor, 0);
 
     }
 
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
-        return LayoutInflater.from(context).inflate(R.layout.mod_list_item, viewGroup, false);
+        return null;
     }
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView tvName = (TextView) view.findViewById(R.id.summaryName);
-        TextView tvEndorsements = (TextView) view.findViewById(R.id.summaryEndorsements);
-        TextView tvCategory = (TextView) view.findViewById(R.id.summaryCategory);
-        TextView tvDescription = (TextView) view.findViewById(R.id.summaryDescription);
+        TextView tvName = (TextView) view.findViewById(R.id.detailName);
+        TextView tvUrl = (TextView) view.findViewById(R.id.detailUrl);
+        TextView tvCategory = (TextView) view.findViewById(R.id.detailCategory);
+        TextView tvEndorsements = (TextView) view.findViewById(R.id.detailEndorsements);
+        TextView tvDescription = (TextView) view.findViewById(R.id.detailDescription);
 
         String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
-        String endorsements = cursor.getString(cursor.getColumnIndexOrThrow("endorsements"));
+        String url = cursor.getString(cursor.getColumnIndexOrThrow("url"));
         String category = cursor.getString(cursor.getColumnIndexOrThrow("category"));
+        String endorsements = cursor.getString(cursor.getColumnIndexOrThrow("endorsements"));
         String description = cursor.getString(cursor.getColumnIndexOrThrow("description"));
 
         tvName.setText(name);
-        tvEndorsements.setText(endorsements);
+        tvUrl.setText(url);
         tvCategory.setText(category);
+        tvEndorsements.setText(endorsements);
         tvDescription.setText(description);
-        
     }
 }

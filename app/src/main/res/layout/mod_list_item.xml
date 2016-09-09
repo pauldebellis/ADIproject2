@@ -17,4 +17,18 @@
         android:layout_height="match_parent"
         android:textSize="10pt"/>
 
+    <TextView
+        android:id="@+id/summaryCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="10pt"
+        android:layout_below="@+id/summaryEndorsements"/>
+
+    <TextView
+        android:id="@+id/summaryDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="8pt"
+        android:layout_below="@id/summaryName"/>
+
 </RelativeLayout>

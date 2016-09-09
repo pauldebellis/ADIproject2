@@ -21,7 +21,7 @@ public class AddModFragment extends Fragment {
     EditText modEndorsements;
     EditText modCategory;
     EditText modDescription;
-    EditText modUrl;
+//    EditText modUrl;
 
     public AddModFragment() {
         // Required empty public constructor
@@ -37,7 +37,7 @@ public class AddModFragment extends Fragment {
         modEndorsements = (EditText) view.findViewById(R.id.enterModEndorsements);
         modCategory = (EditText) view.findViewById(R.id.enterModCategory);
         modDescription = (EditText) view.findViewById(R.id.enterModDescription);
-        modUrl = (EditText) view.findViewById(R.id.enterModUrl);
+//        modUrl = (EditText) view.findViewById(R.id.enterModUrl);
         Button addButton = (Button) view.findViewById(R.id.finalizeMod);
 
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -59,12 +59,12 @@ public class AddModFragment extends Fragment {
     public void addMod(View view){
         String name = modName.getText().toString();
         String endorsements = modEndorsements.getText().toString();
-        String url = modUrl.getText().toString();
+//        String url = modUrl.getText().toString();
         String category = modCategory.getText().toString();
         String description = modDescription.getText().toString();
         DatabaseHelper dbHelper = new DatabaseHelper(getContext());
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        dbHelper.addMod(name, endorsements, url, category, description, db);
+        dbHelper.addMod(name, endorsements, category, description, db);
         dbHelper.close();
     }
 
