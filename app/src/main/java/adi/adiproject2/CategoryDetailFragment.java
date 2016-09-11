@@ -1,6 +1,7 @@
 package adi.adiproject2;
 
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 
 /**
@@ -62,6 +64,12 @@ public class CategoryDetailFragment extends Fragment {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                TextView modName = (TextView)view.findViewById(R.id.summaryName);
+                String name = modName.getText().toString();
+                Intent intent = new Intent(getActivity().getBaseContext(), ModDetailsFragment.class);
+                intent.putExtra("MODNAME", name);
+                getActivity().startActivity(intent);
 
             }
         });
