@@ -10,13 +10,14 @@
 
     <Button
         android:id="@+id/addButton"
-        android:text="ADD"
+        android:text="@string/add_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="5dp"/>
+        android:layout_margin="5dp"
+        android:contentDescription="@string/add_new_mod"/>
 
     <ListView
         android:id="@+id/modList"

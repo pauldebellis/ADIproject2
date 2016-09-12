@@ -3,55 +3,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="adi.adiproject2.ModDetailsActivity"
-    android:background="@drawable/bg">
+    tools:context="adi.adiproject2.ModDetailsActivity">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:background="#66FFFFFF">
+        android:background="@color/viewBG">
 
-    <TextView
-        android:id="@+id/detailsName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16pt"
-        android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/detailsName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="16pt" />
 
-    <!--<TextView-->
+        <!--<TextView-->
         <!--android:id="@+id/detailsUrl"-->
         <!--android:layout_width="wrap_content"-->
         <!--android:layout_height="wrap_content"-->
         <!--android:layout_below="@+id/detailsName"/>-->
 
-    <TextView
-        android:id="@+id/detailsCategory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/detailsName"
-        android:textSize="10pt"
-        android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/detailsCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detailsName"
+            android:layout_margin="5dp"
+            android:textSize="10pt" />
 
-    <TextView
-        android:id="@+id/detailsEndorsements"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/detailsCategory"
-        android:textSize="10pt"
-        android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/detailsEndorsements"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detailsCategory"
+            android:layout_margin="5dp"
+            android:textSize="10pt" />
 
-    <TextView
-        android:id="@+id/detailsDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/detailsEndorsements"
-        android:textSize="10pt"
-        android:layout_margin="5dp"/>
+        <TextView
+            android:id="@+id/detailsDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detailsEndorsements"
+            android:layout_margin="5dp"
+            android:textSize="10pt" />
 
     </RelativeLayout>
 

@@ -9,14 +9,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        android:background="#66FFFFFF">
+        android:background="@color/viewBG">
 
         <EditText
             android:id="@+id/enterModName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mod Name"
+            android:hint="@string/mod_name"
             android:textSize="10pt" />
+
 
         <!--<EditText-->
         <!--android:id="@+id/enterModUrl"-->
@@ -31,8 +32,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/enterModName"
-            android:hint="Category"
-            android:textSize="8pt" />
+            android:hint="@string/category_hint"
+            android:textSize="8pt"/>
 
 
 
@@ -41,15 +42,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/enterModCategory"
-            android:hint="Endorsements"
-            android:textSize="8pt" />
+            android:hint="@string/endorsements_hint"
+            android:textSize="8pt"/>
 
         <EditText
             android:id="@+id/enterModDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/enterModEndorsements"
-            android:hint="Description"
+            android:hint="@string/description_hint"
             android:textSize="8pt" />
 
         <Button
@@ -60,7 +61,8 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_margin="5dp"
-            android:text="Add mod" />
+            android:text="@string/add_mod_button_final"
+            android:contentDescription="@string/finalize_mod"/>
 
     </RelativeLayout>
 

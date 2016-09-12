@@ -5,4 +5,15 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="endorsements">Nexus Endorsements: </string>
     <string name="category">Category: </string>
+    <string name="mod_name">Mod Name</string>
+    <string name="category_hint">Category</string>
+    <string name="endorsements_hint">Endorsements</string>
+    <string name="description_hint">Description</string>
+    <string name="add_mod_button_final">Add mod</string>
+    <string name="add_button">ADD</string>
+    <string name="add_new_mod">Add new mod</string>
+    <string name="finalize_mod">finalize mod details</string>
+    <string name="enter_mod_name">enter mod name</string>
+    <string name="enter_mod_category">enter mod category</string>
+    <string name="enter_number_of_endorsements">enter number of endorsements</string>
 </resources>
