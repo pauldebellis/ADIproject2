@@ -67,10 +67,9 @@ public class CategoryDetailFragment extends Fragment {
 
                 TextView modName = (TextView)view.findViewById(R.id.summaryName);
                 String name = modName.getText().toString();
-                Intent intent = new Intent(getActivity().getBaseContext(), ModDetailsFragment.class);
+                Intent intent = new Intent(getActivity().getBaseContext(), ModDetailsActivity.class);
                 intent.putExtra("MODNAME", name);
                 getActivity().startActivity(intent);
-
             }
         });
         return view;

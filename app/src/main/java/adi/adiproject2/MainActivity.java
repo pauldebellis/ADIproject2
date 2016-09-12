@@ -3,7 +3,6 @@ package adi.adiproject2;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
-import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -57,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
 //            Creates a new categorydetail fragment and passes it cursor from search
             CategoryDetailFragment fragment = new CategoryDetailFragment(dbHelper.searchMods(query));
-            DatabaseUtils.dumpCursor(dbHelper.searchMods(query));
+//            DatabaseUtils.dumpCursor(dbHelper.searchMods(query));
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentContainer, fragment);

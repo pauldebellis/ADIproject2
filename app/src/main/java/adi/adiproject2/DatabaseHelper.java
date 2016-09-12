@@ -68,20 +68,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.query(TABLE_NAME, projection, null, null, null, null, null);
         cursor.moveToFirst();
 
-        DatabaseUtils.dumpCursor(cursor);
+//        DatabaseUtils.dumpCursor(cursor);
 
         return cursor;
     }
 
 
     //GET MOD INFO FOR DETAILED VIEW
-    public Cursor getModDetailed(SQLiteDatabase db) {
-        db = getReadableDatabase();
-        String[] projection = new String[]{"_id", COLUMN_ID, COLUMN_NAME, COLUMN_CATEGORY, COLUMN_ENDORSEMENTS, COLUMN_DESCRIPTION, COLUMN_URL};
-//        String selection = COLUMN_ID+" = ?";
-        Cursor cursor = db.query(TABLE_NAME, projection, null, null, null, null, null);
+    public Cursor getModDetailed(String name) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] projection = new String[]{"_id", COLUMN_NAME, COLUMN_CATEGORY, COLUMN_ENDORSEMENTS, COLUMN_DESCRIPTION, COLUMN_URL};
+        String WHERE = COLUMN_NAME+" = ?";
+//        String[] NAME = {COLUMN_NAME};
+        Cursor cursor = db.query(TABLE_NAME, projection, WHERE, new String[]{name}, null, null, null, null);
+//        Cursor cursor = db.rawQuery("SELECT ")
         cursor.moveToFirst();
-
+        DatabaseUtils.dumpCursor(cursor);
         return cursor;
     }
 

@@ -2,6 +2,7 @@ package adi.adiproject2;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
@@ -24,11 +25,11 @@ public class ModDetailsCursorAdapter extends CursorAdapter{
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView tvName = (TextView) view.findViewById(R.id.detailName);
-        TextView tvUrl = (TextView) view.findViewById(R.id.detailUrl);
-        TextView tvCategory = (TextView) view.findViewById(R.id.detailCategory);
-        TextView tvEndorsements = (TextView) view.findViewById(R.id.detailEndorsements);
-        TextView tvDescription = (TextView) view.findViewById(R.id.detailDescription);
+        TextView tvName = (TextView) view.findViewById(R.id.detailsName);
+        TextView tvUrl = (TextView) view.findViewById(R.id.detailsUrl);
+        TextView tvCategory = (TextView) view.findViewById(R.id.detailsCategory);
+        TextView tvEndorsements = (TextView) view.findViewById(R.id.detailsEndorsements);
+        TextView tvDescription = (TextView) view.findViewById(R.id.detailsDescription);
 
         String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
         String url = cursor.getString(cursor.getColumnIndexOrThrow("url"));
@@ -41,5 +42,7 @@ public class ModDetailsCursorAdapter extends CursorAdapter{
         tvCategory.setText(category);
         tvEndorsements.setText(endorsements);
         tvDescription.setText(description);
+
+        DatabaseUtils.dumpCursor(cursor);
     }
 }

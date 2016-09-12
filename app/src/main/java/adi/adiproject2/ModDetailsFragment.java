@@ -1,7 +1,6 @@
 package adi.adiproject2;
 
 
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -41,9 +40,9 @@ public class ModDetailsFragment extends Fragment {
 
         DatabaseHelper dbHelper = new DatabaseHelper(getContext());
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = dbHelper.getModDetailed(db);
+//        Cursor cursor = dbHelper.getModDetailed(db);
 
-        ModDetailsCursorAdapter adapter = new ModDetailsCursorAdapter(getActivity(), cursor);
+//        ModDetailsCursorAdapter adapter = new ModDetailsCursorAdapter(getActivity(), cursor);
 
         return view;
     }
