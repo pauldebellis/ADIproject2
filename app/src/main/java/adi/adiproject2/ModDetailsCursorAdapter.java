@@ -26,7 +26,7 @@ public class ModDetailsCursorAdapter extends CursorAdapter{
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
         TextView tvName = (TextView) view.findViewById(R.id.detailsName);
-        TextView tvUrl = (TextView) view.findViewById(R.id.detailsUrl);
+//        TextView tvUrl = (TextView) view.findViewById(R.id.detailsUrl);
         TextView tvCategory = (TextView) view.findViewById(R.id.detailsCategory);
         TextView tvEndorsements = (TextView) view.findViewById(R.id.detailsEndorsements);
         TextView tvDescription = (TextView) view.findViewById(R.id.detailsDescription);
@@ -38,7 +38,7 @@ public class ModDetailsCursorAdapter extends CursorAdapter{
         String description = cursor.getString(cursor.getColumnIndexOrThrow("description"));
 
         tvName.setText(name);
-        tvUrl.setText(url);
+//        tvUrl.setText(url);
         tvCategory.setText(category);
         tvEndorsements.setText(endorsements);
         tvDescription.setText(description);

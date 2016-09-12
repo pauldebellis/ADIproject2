@@ -18,7 +18,7 @@ public class ModDetailsActivity extends AppCompatActivity {
         TextView modEndorsements = (TextView) findViewById(R.id.detailsEndorsements);
         TextView modCategory = (TextView) findViewById(R.id.detailsCategory);
         TextView modDescription = (TextView) findViewById(R.id.detailsDescription);
-        TextView modUrl = (TextView) findViewById(R.id.detailsUrl);
+//        TextView modUrl = (TextView) findViewById(R.id.detailsUrl);
 
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -30,9 +30,10 @@ public class ModDetailsActivity extends AppCompatActivity {
 
         if (cursor.getCount()>0) {
 
+
             modName.setText(cursor.getString(cursor.getColumnIndex("name")));
-            modEndorsements.setText(cursor.getString(cursor.getColumnIndex("endorsements")));
-            modCategory.setText(cursor.getString(cursor.getColumnIndex("category")));
+            modEndorsements.setText("Nexus Endorsements: "+cursor.getString(cursor.getColumnIndex("endorsements")));
+            modCategory.setText("Category: "+cursor.getString(cursor.getColumnIndex("category")));
             modDescription.setText(cursor.getString(cursor.getColumnIndex("description")));
         }
     }
