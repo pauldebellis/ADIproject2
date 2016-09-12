@@ -62,7 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //GET MOD SUMMARY FOR CATEGORY DETAIL
     public Cursor getModSummary() {
         SQLiteDatabase db = getReadableDatabase();
-        String[] projection = new String[]{"_id", COLUMN_NAME, COLUMN_ENDORSEMENTS, COLUMN_CATEGORY, COLUMN_DESCRIPTION};
+        String[] projection = new String[]{"_id", COLUMN_NAME, COLUMN_ENDORSEMENTS, COLUMN_CATEGORY};
 //        String selection = COLUMN_CATEGORY+" = ?";
 //        String[] selectionArgs = new String[]{String.valueOf(id)};
         Cursor cursor = db.query(TABLE_NAME, projection, null, null, null, null, null);

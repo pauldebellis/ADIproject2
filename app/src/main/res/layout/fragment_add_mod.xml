@@ -2,16 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="adi.adiproject2.AddModFragment">
-    
-    <EditText
-        android:id="@+id/enterModName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Mod Name"
-        android:textSize="10pt"/>
+    tools:context="adi.adiproject2.AddModFragment"
+    android:background="@drawable/bg">
 
-    <!--<EditText-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:background="#66FFFFFF">
+
+        <EditText
+            android:id="@+id/enterModName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mod Name"
+            android:textSize="10pt" />
+
+        <!--<EditText-->
         <!--android:id="@+id/enterModUrl"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="wrap_content"-->
@@ -19,37 +26,42 @@
         <!--android:layout_below="@+id/enterModName"-->
         <!--android:textSize="10pt"/>-->
 
-    <EditText
-        android:id="@+id/enterModCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Category"
-        android:layout_below="@+id/enterModName"
-        android:textSize="10pt"/>
+        <EditText
+            android:id="@+id/enterModCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/enterModName"
+            android:hint="Category"
+            android:textSize="8pt" />
 
-    <EditText
-        android:id="@+id/enterModDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Description"
-        android:layout_below="@id/enterModCategory"
-        android:textSize="10pt"/>
 
-    <EditText
-        android:id="@+id/enterModEndorsements"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Endorsements"
-        android:layout_below="@id/enterModDescription"
-        android:textSize="10pt"/>
 
-    <Button
-        android:id="@+id/finalizeMod"
-        android:text="Add mod"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        <EditText
+            android:id="@+id/enterModEndorsements"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/enterModCategory"
+            android:hint="Endorsements"
+            android:textSize="8pt" />
+
+        <EditText
+            android:id="@+id/enterModDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/enterModEndorsements"
+            android:hint="Description"
+            android:textSize="8pt" />
+
+        <Button
+            android:id="@+id/finalizeMod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:text="Add mod" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

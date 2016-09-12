@@ -31,17 +31,17 @@ public class ModListCursorAdapter extends CursorAdapter {
         TextView tvName = (TextView) view.findViewById(R.id.summaryName);
         TextView tvEndorsements = (TextView) view.findViewById(R.id.summaryEndorsements);
         TextView tvCategory = (TextView) view.findViewById(R.id.summaryCategory);
-        TextView tvDescription = (TextView) view.findViewById(R.id.summaryDescription);
+//        TextView tvDescription = (TextView) view.findViewById(R.id.summaryDescription);
 
         String name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
         String endorsements = cursor.getString(cursor.getColumnIndexOrThrow("endorsements"));
         String category = cursor.getString(cursor.getColumnIndexOrThrow("category"));
-        String description = cursor.getString(cursor.getColumnIndexOrThrow("description"));
+//        String description = cursor.getString(cursor.getColumnIndexOrThrow("description"));
 
         tvName.setText(name);
         tvEndorsements.setText(endorsements);
         tvCategory.setText(category);
-        tvDescription.setText(description);
+//        tvDescription.setText(description);
         
     }
 }
