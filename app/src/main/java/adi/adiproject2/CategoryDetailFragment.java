@@ -45,6 +45,7 @@ public class CategoryDetailFragment extends Fragment {
                 Fragment addMod = new AddModFragment();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.fragmentContainer, addMod);
+                transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
